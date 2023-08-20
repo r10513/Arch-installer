@@ -94,12 +94,15 @@ sed -i "s/uid=user/uid=$uid/" base_system.sh
 sed -i "s/ufullname=\"Ben Utzer\"/ufullname=\"$ufullname\"/" base_system.sh
 sed -i "s/upw=password/upw=$upw/" base_system.sh
 
+pacman --noconfirm -Sy wget unzip
 wget https://github.com/r10513/Arch-installer/archive/refs/heads/main.zip
-unzip main.zip
-mv Arch-installer-main/base_system /mnt
-mv Arch-installer-main/kde_system /mnt
+unzip -qq main.zip
+mv Arch-installer-main/base_system.sh /mnt
+mv Arch-installer-main/kde_system.sh /mnt
 rm main.zip
 rm -R Arch-installer-main
+chmod a+x /mnt/base_system.sh
+chmod a+x /mnt/kde_system.sh
 echo " "
 echo " To continue to the next install stage, enter /base_system.sh "
 arch-chroot /mnt

@@ -98,11 +98,11 @@ pacman --noconfirm -Sy wget unzip
 wget https://github.com/r10513/Arch-installer/archive/refs/heads/main.zip
 unzip -qq main.zip
 mv Arch-installer-main/base_system.sh /mnt
-mv Arch-installer-main/kde_system.sh /mnt
+mv Arch-installer-main/kde_install.sh /mnt
 rm main.zip
 rm -R Arch-installer-main
 chmod a+x /mnt/base_system.sh
-chmod a+x /mnt/kde_system.sh
+chmod a+x /mnt/kde_install.sh
 echo " "
 echo " To continue to the next install stage, enter /base_system.sh "
 arch-chroot /mnt

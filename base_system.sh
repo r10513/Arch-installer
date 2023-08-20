@@ -87,7 +87,7 @@ sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/defa
 
 # install cute grub theme
 wget https://github.com/r10513/EndeavourOS-Blue-GRUB-Theme/archive/refs/heads/main.zip
-unzip main.zip -qq -d /boot/grub/themes
+unzip -qq main.zip -d /boot/grub/themes
 mv /boot/grub/themes/EndeavourOS-Blue-GRUB-Theme-main/EndeavourOS /boot/grub/themes/EndeavourOS-Blue
 rm main.zip
 rm -R /boot/grub/themes/EndeavourOS-Blue-GRUB-Theme-main

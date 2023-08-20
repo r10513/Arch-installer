@@ -15,11 +15,11 @@ yay --needed --noconfirm -S timeshift-bin timeshift-autosnap
 #sudo timeshift --snapshot-device /dev[....]
 sudo timeshift --create --comments "First Backup" --tags D
 
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 
 sudo pacman -S --needed --noconfirm wayland-protocols wayland-utils plasma-desktop \
 plasma-firewall konsole kscreen kinfocenter dolphin plasma-wayland-protocols yt-dlp \
@@ -33,7 +33,7 @@ smartmontools gimp inkscape scribus meld bleachbit gwenview okular skanlite kate
 keysmith sweeper spectacle kweather elisa k3b kjournald vivaldi vivaldi-ffmpeg-codecs \
 redshift plasma-disks speech-dispatcher libertinus-font kwallet-pam bluedevil bluez-qt
 
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 
 sudo sed -i 's/Current=/Current=breeze/' /usr/lib/sddm/sddm.conf.d/default.conf
 systemctl enable sddm
@@ -41,7 +41,7 @@ systemctl enable sddm
 yay --needed --noconfirm -S fastfetch-bin pamac-aur pamac-tray-icon-plasma insync \
 insync-dolphin usbimager-bin powertop-auto-tune xwaylandvideobridge-bin
 
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 
 # some apps
 sudo pacman -S --needed --noconfirm libreoffice-fresh libreoffice-fresh-de glances \
@@ -52,7 +52,7 @@ sudo pacman -S --needed --noconfirm jfsutils reiserfsprogs libdvdcss libid3tag \
 unarchiver unrar vcdimager vorbis-tools xfsprogs zip libnfs pstoedit read-edid \
 udftools arj cdrtools dvd+rw-tools exfat-utils f2fs-tools flite gst-plugins-ugly
 
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 
 yay --needed --noconfirm -S \
 softmaker-office-2021-bin \
@@ -174,7 +174,7 @@ ttf-xo-fonts
 #ttf-nanum \
 #wps-office-fonts \
 
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 
 echo "installing ocenaudio, instead of audacity"
 wget https://www.ocenaudio.com/downloads/ocenaudio_archlinux.pkg.tar.xz

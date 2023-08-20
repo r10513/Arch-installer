@@ -84,16 +84,6 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 cp /etc/pacman.conf /mnt/etc/pacman.conf
 
-# adjusting next script...
-
-sed -i "s|timezone=CET|timezone=$timezone|" base_system.sh
-sed -i "s/hname=localhost/hname=$hname/" base_system.sh
-sed -i "s/fqhname=localhost.localdomain/fqhname=$fqhname/" base_system.sh
-sed -i "s/rootpw=root/rootpw=$rootpw/" base_system.sh
-sed -i "s/uid=user/uid=$uid/" base_system.sh
-sed -i "s/ufullname=\"Ben Utzer\"/ufullname=\"$ufullname\"/" base_system.sh
-sed -i "s/upw=password/upw=$upw/" base_system.sh
-
 pacman --noconfirm -Sy wget unzip
 wget https://github.com/r10513/Arch-installer/archive/refs/heads/main.zip
 unzip -qq main.zip
@@ -101,6 +91,17 @@ mv Arch-installer-main/base_system.sh /mnt
 mv Arch-installer-main/kde_install.sh /mnt
 rm main.zip
 rm -R Arch-installer-main
+
+# adjusting next script...
+
+sed -i "s|timezone=CET|timezone=$timezone|" /mnt/base_system.sh
+sed -i "s/hname=localhost/hname=$hname/" /mnt/base_system.sh
+sed -i "s/fqhname=localhost.localdomain/fqhname=$fqhname/" /mnt/base_system.sh
+sed -i "s/rootpw=root/rootpw=$rootpw/" /mnt/base_system.sh
+sed -i "s/uid=user/uid=$uid/" /mnt/base_system.sh
+sed -i "s/ufullname=\"Ben Utzer\"/ufullname=\"$ufullname\"/" /mnt/base_system.sh
+sed -i "s/upw=password/upw=$upw/" /mnt/base_system.sh
+
 chmod a+x /mnt/base_system.sh
 chmod a+x /mnt/kde_install.sh
 echo " "

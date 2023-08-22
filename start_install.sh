@@ -38,6 +38,7 @@ echo " IF YOU ARE NOT READY, ABORT THE SCRIPT NOW. THIS IS YOUR ONLY WARNING!!!!
 echo " "
 read -r -p "Enter the partition for the btrfs filesystem (e.g. sda5 or nvme0n1p5): " root_filesystem
 read -r -p "Enter the partition for the grub bootloader (e.g. sda1 or nvme0n1p1): " boot_filesystem
+read -r -p "Enter the partition for the windows partition (e.g. sda3 or nvme0n1p3): " win_filesystem
 
 mkfs.btrfs -f /dev/$root_filesystem
 mount /dev/$root_filesystem /mnt
@@ -61,7 +62,7 @@ mount -o noatime,ssd,space_cache=v2,compress=zstd,discard=async,subvol=@var_cach
 mkdir -p /mnt/boot/efi
 mount /dev/$boot_filesystem /mnt/boot/efi
 mkdir /mnt/windows
-mount /dev/nvme0n1p3 /mnt/windows
+mount /dev/$win_filesystem /mnt/windows
 pacman -Sy
 sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 sed -i 's/#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf

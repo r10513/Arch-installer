@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 if [[ ! -f /sys/firmware/efi/fw_platform_size ]] ; then
         echo 'Please reboot your PC in UEFI mode' >&2

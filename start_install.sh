@@ -1,3 +1,10 @@
+!/bin/sh
+
+if [[ ! -f /sys/firmware/efi/fw_platform_size ]] ; then
+        echo 'Please reboot your PC in UEFI mode' >&2
+        exit 1
+fi
+
 echo "This script installs Arch on your computer."
 read -n1 -r -p "enter any key when ready, or press ^C to abort" key
 clear

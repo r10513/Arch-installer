@@ -26,8 +26,8 @@ I am not using a swap partition or a swap file. I am using zram.
 
 It is mandatory to have a fat / fat32 partition for grub.
 In case of dual boot systems (windows / linux) I normally place grub in the EFI partition.
-I am also mounting a windows partition (/sda3 in my case). 
-The script could be easily adjusted to ask you for the name of that partition..
+I am also mounting a windows partition, but if you don't have it, 
+or don't want to mount it, comment the relevant lines..
 
 The script works also under QEMU (or proxmox).
 
@@ -51,7 +51,6 @@ Your PC must be booted in UEFI mode, otherwise this script won't work.
 Here a quick way to determine if your PC is in UEFI boot mode:
 https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface
 or, more quickly, check if the directory /sys/firmware/efi/ exist.
-In future I might add a check at beginning of start_install.sh
 
 I also decided not to make checks (for validity, emptiness, etc.) on input. 
 If you don't provide an answer to a question, the script may fail.

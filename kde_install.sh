@@ -1,4 +1,10 @@
-# login as massimo
+#!/bin/sh
+
+if [ "$(id -u)" -eq 0 ]; then
+        echo 'This script must NOT be run by root' >&2
+        exit 1
+fi
+
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 git clone https://aur.archlinux.org/yay-bin

@@ -10,6 +10,7 @@ read -n1 -r -p "enter any key when ready, or press ^C to abort" key
 clear
 read -r -p "Enter the keyboard layout (e.g. de-latin1): " key_layout
 loadkeys $key_layout
+echo "_____Keyboard layout loaded correctly_____"
 
 read -r -p "Enter the timezone (e.g. Europe/Berlin): " timezone
 timedatectl set-timezone $timezone
